@@ -1,12 +1,12 @@
 # Introduction {#sec-intro .unnumbered}
 
-Hello! I'm Jonathan, and I want to teach you statistics. I have designed this website to accompany the University of Chicago course ADSP 31014 "Statistical Models for Data Science", since I was unable to find a single textbook which covered all of the requisite material, and and did not want my students to buy three expensive textbooks for a ten-week class.
+Hello! I'm Jonathan, and I want to teach you statistics. Specifically, I hope to teach you in two ten-week courses, *Statistical Models for Data Science* and *Time Series Analysis and Forecasting*.
+
+However, not every student arrives at these courses equally well-prepared. Some students have taken multiple college-level statistics courses, others may have not taken any, or last studied these topics ten or twenty years ago. All of these students can succeed, but some of them will succeed more easily with a little review of basic statistical concepts. This mini-course should help lay the foundations for future graduate-level studies in statistical inference.
 
 ## How to use this website {#sec-howtouse}
 
 The left-side chapter headings and search bar will help you to select different pages. The right-side table of contents will help you to navigate within each page.
-
-The appendices contain notes on common probability distributions, a few proofs (which might be of interest but are not necessary to progress through the material), and a table of commonly used symbols and their meanings. For more on how to read these chapters, please see the last section below, @sec-notation.
 
 ## Purpose and scope
 
@@ -16,15 +16,23 @@ The tools and methods discussed in these notes were built from such theoretical 
 
 So I want to teach probability and statistics "for data scientists". Data science is a tradecraft, not a body of theory, and it allows people and organizations to answer questions, solve problems, and achieve goals. Data science which does not help us to confront real problems or understand real datasets is not truly data science after all.
 
-I will try to stay focused on that mission in these notes, which should not be confused for a true textbook: they more closely resemble a detailed set of lecture slides, paired with ready-to-use code and interactive workshops. The layout of these notes echoes the syllabus for my class: a fast-paced survey of inferential statistics and parametric modeling methods, using likelihood estimation theory as a throughline for three main sections:
+The course is split into five modules, which might each correspond to a week's lesson in a formal classroom setting:
 
--   First, we'll review some topics in **univariate analysis** which may already be familiar to many readers.
--   Second, we'll examine **ordinary least squares (OLS) regression** in more detail than readers may have seen at the college level.
--   Third, we'll abstract from OLS regression to the family of models called **generalized linear models**, which describe non-linear trends among non-normally distributed datasets.
+ 1.  We will start with the basics of probability, including some elements of set theory and combinatorics, which help to motivate and precisely define probability.
+ 
+ 2. Then we consider distributions of random variables, which take on different values with different probabilities.
+ 
+ 3. Next we dive more deeply into properties and functions of these random variables, including simulation exercises.
+ 
+ 4. From there we move to samples of data. We can summarize these samples with descriptive statistics, and learn about theoretical distributions which generated the sample with inferential statistics.
+ 
+ 5. Finally, we will discuss relationships between two or more variables, up to and including simple "least squares" regression.
+ 
+An optional series of videos, accessible through [CANVAS TITLE AND HTML LINK] will provide commentary and insight on the reference material found here on the website.
 
 ## Recommended textbooks {#sec-referencetexts}
 
-Despite the sentiments above, I retain both fondness and respect for true textbooks, and I highly suggest that readers of these notes pair them with one or more proper reference tomes. A few recommendations follow:
+These notes contain some formal mathematical language, but they purposely avoid the depth and rigor of a true graduate-level statistics textbook. I highly suggest that readers of these notes pair them with one or more proper reference tomes. Two recommendations follow:
 
 -   *Introduction to Probability 2nd edition*, by Joseph Blitzstein and Jessica Hwang
 
