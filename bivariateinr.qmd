@@ -1,3 +1,0 @@
-# Bivariate relationships in R
-
-Coming soon

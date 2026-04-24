@@ -1,3 +1,0 @@
-# Random variables in R
-
-Coming soon

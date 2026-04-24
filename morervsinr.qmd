@@ -1,3 +1,0 @@
-# Working with random variables in R
-
-Coming soon
