@@ -396,9 +396,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#experiments" id="toc-experiments" class="nav-link active" data-scroll-target="#experiments">Experiments</a></li>
-  <li><a href="#the-axioms-of-probability" id="toc-the-axioms-of-probability" class="nav-link" data-scroll-target="#the-axioms-of-probability">The axioms of probability</a>
+  <li><a href="#the-axioms-of-probability" id="toc-the-axioms-of-probability" class="nav-link" data-scroll-target="#the-axioms-of-probability">The axioms of probability</a></li>
+  <li><a href="#joint-marginal-and-conditional-probability" id="toc-joint-marginal-and-conditional-probability" class="nav-link" data-scroll-target="#joint-marginal-and-conditional-probability">Joint, marginal, and conditional probability</a>
   <ul class="collapse">
-  <li><a href="#joint-marginal-and-conditional-probability" id="toc-joint-marginal-and-conditional-probability" class="nav-link" data-scroll-target="#joint-marginal-and-conditional-probability">Joint, marginal, and conditional probability</a></li>
+  <li><a href="#result-1-probability-as-branching-paths" id="toc-result-1-probability-as-branching-paths" class="nav-link" data-scroll-target="#result-1-probability-as-branching-paths">Result 1: Probability as branching paths</a></li>
+  <li><a href="#result-2-the-law-of-complete-probability" id="toc-result-2-the-law-of-complete-probability" class="nav-link" data-scroll-target="#result-2-the-law-of-complete-probability">Result 2: The Law of Complete Probability</a></li>
+  <li><a href="#result-3-bayes-theorem" id="toc-result-3-bayes-theorem" class="nav-link" data-scroll-target="#result-3-bayes-theorem">Result 3: Bayes Theorem</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -521,8 +524,9 @@ Note
 </div>
 </div>
 <p>The first result above simply confirms that the probability of an event happening is equivalent to one minus the probability of the event not happening. The second result helps us to find the probability that <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> will happen (you can think of union as ‘or’ operator and intersection as ‘and’). If we simply add all the probability of <span class="math inline">\(A\)</span> to all the probability of <span class="math inline">\(B\)</span>, we will double-count their intersection, which is in both sets. So we must subtract one intersection… unless the two sets are disjoint, in which case there is no problem!</p>
-<section id="joint-marginal-and-conditional-probability" class="level3">
-<h3 class="anchored" data-anchor-id="joint-marginal-and-conditional-probability">Joint, marginal, and conditional probability</h3>
+</section>
+<section id="joint-marginal-and-conditional-probability" class="level2">
+<h2 class="anchored" data-anchor-id="joint-marginal-and-conditional-probability">Joint, marginal, and conditional probability</h2>
 <p>Often we wish to study the relationships between two or more experiments. For example, consider someone who takes a diagnostic test for a particular disease:</p>
 <ul>
 <li><p>One experiment is whether the person actually has the disease</p></li>
@@ -557,6 +561,8 @@ Note
 <p>Let the triplet <span class="math inline">\(\Omega,\mathcal{F},P\)</span> define an experiment, and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events within <span class="math inline">\(\mathcal{F}\)</span>. The conditional probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span> is written <span class="math inline">\(P(A|B)\)</span> and defined, <span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
 </div>
 </div>
+<section id="result-1-probability-as-branching-paths" class="level3">
+<h3 class="anchored" data-anchor-id="result-1-probability-as-branching-paths">Result 1: Probability as branching paths</h3>
 <p>We can derive three useful rules from this definition of conditional probability. The first flows simply from the above formula if we multiply both sides by <span class="math inline">\(P(B)\)</span>:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -606,7 +612,27 @@ Figure&nbsp;4.4: Chain of coin flip probabilities
 </figcaption>
 </figure>
 </div>
-<p>Using the rule above, we can see that the probability of the full sequence could be expressed as P(THH)=P(T)∙P(TH|T)∙P(THT|TH)=0.6∙0.4∙0.6=0.144. The second useful result is known as The Law of Complete Probability, and allows us to compute the probability of an event by aggregating its conditional probability among a group of exhaustive and mutually exclusive conditions, meaning that exactly one of the conditions is always true. Let the triplet Ω,F,P define an experiment, and let A be an event within F. Let B_1,B_2,…,B_n also be events within F such that all events B_i are mutually exclusive and ∑_i▒P(B_i ) =1 Then, P(A)=∑_i▒〖P(A|B_i )∙P(B_i ) 〗 As an example, consider the proportion of time that my heart rate is elevated above 80 beats per minute. Elevated heart rates are rare in my sleep, perhaps occurring only during stressful dreams (perhaps 2% of my sleep?). When I’m awake, 80bpm is near my resting heart rate, and so I might spend 25% of my waking hours at rates above that. If I sleep on average 7 hours a day, then we can calculate P(elevated)=P(elevated|asleep)∙P(asleep)+P(elevated|awake)∙P(awake) =0.02∙(7/24)+0.25∙(17/24) ≈18.3% The last useful result I will mention here is a way to calculate P(B|A) from P(A|B). This formula is known as Bayes Theorem, after the English clergyman Reverend Thomas Bayes. Bayes was not a trained mathematician, but his natural curiosity and diligent amateur study led him to this significant result, published posthumously: Let the triplet Ω,F,P define an experiment, and let A and B be events within F. Then, P(B|A)=(P(A|B)∙P(B))/P(A) If we further assume that instead of one event B we have many events B_1,B_2,…,B_n such that all events B_i are mutually exclusive and ∑_i▒P(B_i ) =1, then further, P(B_j |A)=(P(A|B_j )∙P(B_j ))/(∑_i▒〖P(A|B_i )∙P(B_i ) 〗) The second equation above flows from the first equation when we apply our prior result of the Law of Complete Probability. For an example of the first equation at work, consider the heart rate hypothetical above: P(awake|elevated)=(P(elevated|awake)∙P(awake))/P(elevated) =(0.25∙(17/24))/(0.1829…)≈0.968 Notice the distinction: The probability that my heart rate is elevated given that I’m awake is pretty low: only 25% (I don’t exercise as often as I should). But the probability that I’m awake given that my heart rate is elevated is very high: almost 97%. This is both because my heart rarely races in my sleep, and because I’m more often awake than asleep. Bayes Theorem has lent its name to an alternative system of probability known as Bayesian probability, because they both allow the user to update their prior beliefs as more and more data are observed. This broader Bayesian system relaxes some of Kolmogorov’s axioms and creates entirely new models and computations which some “classical” or “frequentist” statisticians find controversial. However, using Bayes Theorem itself is uncontroversial and perfectly valid under Kolmogorov’s axioms.</p>
+<p>Using the rule above, we can see that the probability of the full sequence could be expressed as <span class="math inline">\(P(\mathrm{THH}) = P(\mathrm{T}) \cdot P(\mathrm{TH}|\mathrm{T}) \cdot P(\mathrm{THT}|\mathrm{TH})=0.6 \cdot 0.4 \cdot 0.6 = 0.144\)</span>.</p>
+</section>
+<section id="result-2-the-law-of-complete-probability" class="level3">
+<h3 class="anchored" data-anchor-id="result-2-the-law-of-complete-probability">Result 2: The Law of Complete Probability</h3>
+<p>The second useful result is known as The Law of Complete Probability, and allows us to compute the probability of an event by aggregating its conditional probability among a group of exhaustive and mutually exclusive conditions, meaning that exactly one of the conditions is always true. Let the triplet <span class="math inline">\(\Omega,\mathcal{F},P\)</span> define an experiment, and let <span class="math inline">\(A\)</span> be an event within <span class="math inline">\(\mathcal{F}\)</span>. Let <span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> also be events within <span class="math inline">\(\mathcal{F}\)</span> such that all events <span class="math inline">\(B_i\)</span> are mutually exclusive and <span class="math inline">\(\sum_iP(B_i) = 1\)</span> Then,</p>
+<p><span class="math display">\[P(A) = \sum_i P(A|B_i) \cdot P(B_i) \]</span></p>
+<p>As an example, consider the proportion of time that my heart rate is elevated above 80 beats per minute. Elevated heart rates are rare in my sleep, perhaps occurring only during stressful dreams (perhaps 2% of my sleep?). When I’m awake, 80bpm is near my resting heart rate, and so I might spend 25% of my waking hours at rates above that. If I sleep on average 7 hours a day, and therefore am awake 17 hours a day, we can calculate,</p>
+<p><span class="math display">\[\begin{aligned} P(\mathrm{elevated}) &amp;= P(\mathrm{elevated}|\mathrm{asleep}) \cdot P(\mathrm{asleep}) + P(\mathrm{elevated}|\mathrm{awake}) \cdot P(\mathrm{awake}) \\ &amp;= 0.02 \cdot (7/24) + 0.25 \cdot (17/24) \approx 18.3\% \end{aligned}\]</span></p>
+</section>
+<section id="result-3-bayes-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="result-3-bayes-theorem">Result 3: Bayes Theorem</h3>
+<p>The last useful result I will mention here is a way to calculate <span class="math inline">\(P(B|A)\)</span> from <span class="math inline">\(P(A|B)\)</span>. This formula is known as Bayes Theorem, after the English clergyman Reverend Thomas Bayes. Bayes was not a trained mathematician, but his natural curiosity and diligent amateur study led him to this significant result, published posthumously:</p>
+<p>Let the triplet <span class="math inline">\(\Omega,\mathcal{F},P\)</span> define an experiment, and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events within <span class="math inline">\(\mathcal{F}\)</span>. Then,</p>
+<p><span class="math display">\[P(B|A)=\frac{P(A|B) \cdot P(B))}{P(A)}\]</span></p>
+<p>If we further assume that instead of one event <span class="math inline">\(B\)</span> we have many events <span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> such that all events <span class="math inline">\(B_i\)</span> are mutually exclusive and <span class="math inline">\(\sum_i P(B_i) = 1\)</span>, then further,</p>
+<p><span class="math display">\[P(B_j|A) = \frac{P(A|B_j ) \cdot P(B_j)}{\sum_i P(A|B_i) \cdot P(B_i)}\]</span></p>
+<p>The second equation above flows from the first equation when we apply our prior result of the Law of Complete Probability to the denominator of the right hand side.</p>
+<p>For an example of the first equation at work, consider the heart rate hypothetical above:</p>
+<p><span class="math display">\[\begin{aligned} P(\mathrm{awake}|\mathrm{elevated}) &amp;= \frac{P(\mathrm{elevated}|\mathrm{awake}) \cdot P(\mathrm{awake})}{P(\mathrm{elevated})} \\ \\  &amp;= \frac{0.25 \cdot (17/24)}{0.1829\ldots} \approx 0.968 \end{aligned}\]</span></p>
+<p>Notice the distinction: The probability that my heart rate is elevated given that I’m awake is pretty low: only 25% (I don’t exercise as often as I should). But the probability that I’m awake given that my heart rate is elevated is very high: almost 97%. This is both because my heart rarely races in my sleep, and because I’m more often awake than asleep.</p>
+<p>Bayes Theorem has lent its name to an alternative system of probability known as Bayesian probability, because they both allow the user to update their prior beliefs as more and more data are observed. This broader Bayesian system relaxes some of Kolmogorov’s axioms and creates entirely new models and computations which some “classical” or “frequentist” statisticians find controversial. However, using Bayes Theorem itself is uncontroversial and perfectly valid under Kolmogorov’s axioms.</p>
 
 
 </section>
